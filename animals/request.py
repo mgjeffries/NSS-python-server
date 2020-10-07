@@ -1,24 +1,35 @@
 ANIMALS = [
     {
-        "id": 1,
-        "name": "Snickers",
-        "species": "Dog",
-        "locationId": 1,
-        "customerId": 4
+      "id": 1,
+      "name": "Doodles",
+      "breed": "Poodle",
+      "locationId": 2,
+      "treatment": "Shampoo",
+      "customerId": 2
     },
     {
-        "id": 2,
-        "name": "Gypsy",
-        "species": "Dog",
-        "locationId": 1,
-        "customerId": 2
+      "id": 2,
+      "name": "Spots",
+      "breed": "Dalmation",
+      "locationId": 2,
+      "treatment": "Shampoo",
+      "customerId": 2
     },
     {
-        "id": 3,
-        "name": "Blue",
-        "species": "Cat",
-        "locationId": 2,
-        "customerId": 1
+      "id": 3,
+      "name": "Jumps",
+      "breed": "Blue Heeler",
+      "locationId": 1,
+      "treatment": "Obedience",
+      "customerId": 2
+    },
+    {
+      "id": 4,
+      "name": "Spot4",
+      "breed": "Dalmation",
+      "locationId": 1,
+      "treatment": "Nail Trimming",
+      "customerId": 2
     }
 ]
 
