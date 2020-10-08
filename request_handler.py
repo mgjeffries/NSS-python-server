@@ -1,5 +1,5 @@
 from animals import get_all_animals, get_single_animal, create_animal, delete_animal, update_animal
-from customers import get_all_customers, get_single_customer, create_customer, delete_customer
+from customers import get_all_customers, get_single_customer, create_customer, delete_customer, update_customer
 from employees import get_all_employees, get_single_employee, create_employee, delete_employee
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
@@ -106,6 +106,8 @@ class HandleRequests(BaseHTTPRequestHandler):
 
         if resource == "animals":
             update_animal(id, post_body)
+        if resource == "customers":
+            update_customer(id, post_body)
 
         self.wfile.write("".encode())
     
