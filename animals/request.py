@@ -3,44 +3,7 @@ import json
 from models import Animal
 
 
-# ANIMALS = [
-#     {
-#       "id": 1,
-#       "name": "Doodles",
-#       "breed": "Poodle",
-#       "locationId": 2,
-#       "treatment": "Shampoo",
-#       "customerId": 2,
-# 	  "status": "Admitted"
-#     },
-#     {
-#       "id": 2,
-#       "name": "Spots",
-#       "breed": "Dalmation",
-#       "locationId": 2,
-#       "treatment": "Shampoo",
-#       "customerId": 2,
-# 	  "status": "Admitted"
-#     },
-#     {
-#       "id": 3,
-#       "name": "Jumps",
-#       "breed": "Blue Heeler",
-#       "locationId": 1,
-#       "treatment": "Obedience",
-#       "customerId": 2,
-# 	  "status": "Admitted"
-#     },
-#     {
-#       "id": 4,
-#       "name": "Spot4",
-#       "breed": "Dalmation",
-#       "locationId": 1,
-#       "treatment": "Nail Trimming",
-#       "customerId": 2,
-# 	  "status": "Admitted"
-#     }
-# ]
+ANIMALS = []
 
 
 def get_all_animals():
