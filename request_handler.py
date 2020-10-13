@@ -1,6 +1,6 @@
 from animals import get_all_animals, get_single_animal, create_animal, delete_animal, update_animal, get_animals_by_locationId
 from customers import get_all_customers, get_single_customer, create_customer, delete_customer, update_customer, get_customers_by_email
-from employees import get_all_employees, get_single_employee, create_employee, delete_employee, update_employee
+from employees import get_all_employees, get_single_employee, create_employee, delete_employee, update_employee, get_employees_by_locationId
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
@@ -80,8 +80,10 @@ class HandleRequests(BaseHTTPRequestHandler):
             # email as a filtering value?
             if key == "email" and resource == "customers":
                 response = get_customers_by_email(value)
-            if key == "locationId" and resource == "animals":
+            if key == "location_id" and resource == "animals":
                 response = get_animals_by_locationId(value)
+            if key == "location_id" and resource == "employees":
+                response = get_employees_by_locationId(value)
 
         self.wfile.write(response.encode())
 
