@@ -1,6 +1,7 @@
 from animals import get_all_animals, get_single_animal, create_animal, delete_animal, update_animal, get_animals_by_locationId, get_animals_by_status
 from customers import get_all_customers, get_single_customer, create_customer, delete_customer, update_customer, get_customers_by_email
 from employees import get_all_employees, get_single_employee, create_employee, delete_employee, update_employee, get_employees_by_locationId
+from locations import get_all_locations
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
@@ -68,6 +69,8 @@ class HandleRequests(BaseHTTPRequestHandler):
                     response = f"{get_single_customer(id)}"
                 else:
                     response = f"{get_all_customers()}"
+            elif resource == "locations":
+                response = f"{get_all_locations()}"
 
         # Response from parse_url() is a tuple with 3
         # items in it, which means the request was for
