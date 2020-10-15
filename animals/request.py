@@ -1,6 +1,7 @@
+
 import sqlite3
 import json
-from models import Animal
+from models import Animal, Customer, Location
 
 
 ANIMALS = []
@@ -65,8 +66,16 @@ def get_single_animal(id):
             a.breed,
             a.status,
             a.customer_id,
-            a.location_id
+            a.location_id,
+            l.name AS location_name,
+            l.address AS location_address,
+            c.name AS customer_name,
+            c.address AS customer_address
         FROM animal a
+        JOIN Location L
+            ON l.id = a.location_id
+        JOIN Customer c
+            ON c.id = a.customer_id
         WHERE a.id = ?
         """, ( id, ))
 
@@ -77,8 +86,13 @@ def get_single_animal(id):
         animal = Animal(data['id'], data['name'], data['breed'], data['status'],
                         data['location_id'], data['customer_id'],
                         )
+        location = Location(data['location_id'], data['location_name'], data['location_address'])
+        customer = Customer(data['customer_id'], data['customer_name'], data['customer_address'])
+        animal.location = location.__dict__
+        animal.customer = customer.__dict__
 
-        return json.dumps(animal.__dict__)
+
+    return json.dumps(animal.__dict__)
 
 def create_animal(animal):
     # Get the id value of the last animal in the list
