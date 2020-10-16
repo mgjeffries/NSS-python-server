@@ -138,8 +138,8 @@ def update_animal(id, new_animal):
                 location_id = ?,
                 customer_id = ?
         WHERE id = ?
-        """, (new_animal['name'], new_animal['species'],
-              new_animal['status'], new_animal['locationId'],
+        """, (new_animal['name'], new_animal['breed'],
+              new_animal['treatment'], new_animal['locationId'],
               new_animal['customerId'], id, ))
 
         # Were any rows affected?
